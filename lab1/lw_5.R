@@ -8,4 +8,5 @@ vec <- sample(1:100, vec_size, replace = F)
 prob = runif(1, 0, 1)
 NA_vec <- sample(c(0, NA), vec_size, replace = T, prob=c(prob, 1 - prob))
 res_vec <- vec + NA_vec
-sum(res_vec %in% NA)
+which(res_vec %in% NA)
+missed_values <- sum(res_vec %in% NA)
